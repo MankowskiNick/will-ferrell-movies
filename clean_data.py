@@ -1,3 +1,11 @@
+# Nick Mankowski 
+# MATH 265 - Fall 2023
+# Writeup 1
+
+# Pulling data from https://editorial.rottentomatoes.com/guide/will-ferrell-movies-ranked/
+# We need the movie title, year, and rotten tomato score of 10 Will Ferrell movies
+# We will need to pull more data from IMDb and more related sales info
+
 # Import necessary libraries to use regex and random number generation
 import re, random
 
@@ -27,7 +35,7 @@ while len(titled_indices) < 10:
     number = random.randint(0, len(titles) - 1)
 
     # Only pick the numbers not already picked, this way we don't pick any duplicate movies
-    if number not in titled_indices:
+    if number not in titled_indices and int(years[number]) >= 2000:
         titled_indices.append(number)
 
 # Create the CSV file content
